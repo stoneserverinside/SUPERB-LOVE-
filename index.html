@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sameer ❤️ Superb | KING LOVE QUEEN</title>
-    <!-- External Resources -->
+    <title>Sameer ❤️ Superb | Royal King 3D</title>
+    <!-- Fonts & Scripts -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Orbitron:wght@400;900&family=Cinzel:wght@700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
@@ -15,7 +15,7 @@
             --gold: #ffd700;
             --neon-pink: #ff007f;
             --neon-blue: #00d4ff;
-            --royal-bg: #0a0a0a;
+            --royal-bg: #050505;
         }
 
         body, html {
@@ -26,14 +26,14 @@
             overflow-x: hidden;
         }
 
-        /* Fire Background */
+        /* Particles & Fire Background */
         #particles-js {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
         }
 
         .royal-gradient {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2;
-            background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+            background: radial-gradient(circle at center, #111 0%, #000 100%);
         }
 
         #diamond-container {
@@ -54,71 +54,96 @@
 
         /* Header */
         header {
-            height: 50vh; display: flex; flex-direction: column;
+            height: 45vh; display: flex; flex-direction: column;
             justify-content: center; align-items: center; text-align: center; z-index: 2;
         }
 
         .crown-icon {
-            font-size: 4rem; color: var(--gold);
+            font-size: 3.5rem; color: var(--gold);
             filter: drop-shadow(0 0 20px var(--gold));
             animation: crownFloat 3s infinite alternate ease-in-out;
         }
 
-        @keyframes crownFloat {
-            from { transform: translateY(0); }
-            to { transform: translateY(-20px); }
-        }
+        @keyframes crownFloat { from { transform: translateY(0); } to { transform: translateY(-15px); } }
 
         .royal-title {
             font-family: 'Cinzel', serif;
-            font-size: clamp(2rem, 10vw, 4.5rem);
-            letter-spacing: 8px;
+            font-size: clamp(1.8rem, 8vw, 4rem);
+            letter-spacing: 6px;
             background: linear-gradient(to bottom, #fff, var(--gold), #b8860b);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-transform: uppercase;
         }
 
-        /* Royal Card */
+        /* Shayari Card */
         .royal-card {
-            background: rgba(20, 20, 20, 0.8);
+            background: rgba(15, 15, 15, 0.9);
             border: 2px solid var(--gold);
             backdrop-filter: blur(20px);
-            padding: 40px; border-radius: 0 50px 0 50px;
-            max-width: 85%; margin: -40px auto 40px;
-            box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
+            padding: 30px; border-radius: 0 40px 0 40px;
+            max-width: 85%; margin: -20px auto 30px;
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.15);
             position: relative; z-index: 2;
         }
 
         .shayari-text {
             font-family: 'Dancing Script', cursive;
-            font-size: clamp(1.4rem, 4.5vw, 2.2rem);
-            color: #fff; line-height: 1.5;
-            text-shadow: 0 0 10px var(--gold);
+            font-size: clamp(1.2rem, 4vw, 2rem);
+            color: #fff; line-height: 1.6;
+            text-shadow: 0 0 8px var(--gold);
+            text-align: center;
         }
 
-        /* Photos */
+        /* Soul Scanner (Love Calculator) */
+        .scanner-container {
+            max-width: 85%; margin: 20px auto;
+            background: rgba(255, 215, 0, 0.03);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            padding: 25px; border-radius: 20px;
+            text-align: center; position: relative; z-index: 2;
+        }
+
+        .scanner-container h3 {
+            font-size: 0.8rem; letter-spacing: 3px; color: var(--gold); margin-bottom: 15px;
+        }
+
+        input {
+            width: 85%; padding: 12px; margin: 8px 0;
+            background: #111; border: 1px solid #333;
+            border-radius: 10px; color: #fff; font-family: 'Orbitron';
+            text-align: center; font-size: 0.8rem; outline: none;
+        }
+
+        input:focus { border-color: var(--gold); box-shadow: 0 0 10px rgba(255, 215, 0, 0.2); }
+
+        .scan-btn {
+            width: 90%; background: linear-gradient(45deg, #b8860b, var(--gold));
+            color: #000; border: none; padding: 15px;
+            border-radius: 10px; font-weight: 900; letter-spacing: 2px;
+            cursor: pointer; margin-top: 15px; font-family: 'Orbitron';
+        }
+
+        /* Photos Section */
         .photo-grid {
-            display: flex; justify-content: center; gap: 40px;
+            display: flex; justify-content: center; gap: 30px;
             padding: 20px; flex-wrap: wrap; position: relative; z-index: 2;
         }
 
-        .photo-frame {
-            position: relative; width: 220px; height: 220px;
-        }
+        .photo-frame { position: relative; width: 180px; height: 180px; }
 
         .frame-crown {
-            position: absolute; top: -45px; left: 50%;
-            transform: translateX(-50%); font-size: 3rem; z-index: 3;
-            filter: drop-shadow(0 0 10px var(--gold));
+            position: absolute; top: -35px; left: 50%;
+            transform: translateX(-50%); font-size: 2.5rem; z-index: 3;
+            filter: drop-shadow(0 0 8px var(--gold));
         }
 
         .neon-border {
-            width: 100%; height: 100%; border-radius: 20px; padding: 8px;
+            width: 100%; height: 100%; border-radius: 20px; padding: 6px;
             background: linear-gradient(45deg, var(--gold), var(--neon-pink), var(--gold));
             background-size: 200% 200%;
             animation: borderFlow 4s infinite linear;
-            box-shadow: 0 0 25px var(--neon-pink);
+            box-shadow: 0 0 20px var(--neon-pink);
         }
 
         @keyframes borderFlow {
@@ -129,52 +154,48 @@
 
         .neon-border img {
             width: 100%; height: 100%; object-fit: cover;
-            border-radius: 15px; border: 3px solid #000;
+            border-radius: 15px; border: 2px solid #000;
         }
 
-        /* Buttons */
+        /* Buttons Section */
         .royal-btns {
             display: grid; grid-template-columns: repeat(2, 1fr);
-            gap: 20px; padding: 30px; max-width: 600px; margin: 0 auto;
+            gap: 15px; padding: 25px; max-width: 600px; margin: 0 auto;
             position: relative; z-index: 2;
         }
 
         .btn-king {
-            background: linear-gradient(45deg, #111, #222);
+            background: linear-gradient(45deg, #0a0a0a, #1a1a1a);
             border: 1px solid var(--gold);
-            padding: 20px; color: var(--gold);
-            border-radius: 5px; font-family: 'Orbitron', sans-serif;
-            font-weight: 900; cursor: pointer; transition: 0.4s;
-            text-transform: uppercase;
+            padding: 18px; color: var(--gold);
+            border-radius: 8px; font-family: 'Orbitron', sans-serif;
+            font-size: 0.65rem; font-weight: 900; cursor: pointer; transition: 0.3s;
         }
 
-        .btn-king:hover {
-            background: var(--gold); color: #000;
-            box-shadow: 0 0 40px var(--gold);
-        }
+        .btn-king:hover { background: var(--gold); color: #000; box-shadow: 0 0 30px var(--gold); }
 
-        /* Music Bars */
+        /* Music Visualizer */
         .music-visualizer {
-            display: none; justify-content: center; gap: 4px; margin-top: 10px;
+            display: none; justify-content: center; gap: 3px; margin-top: 8px;
         }
 
         .v-bar {
-            width: 4px; height: 15px; background: var(--gold);
+            width: 3px; height: 12px; background: var(--gold);
             animation: bounce 0.6s infinite alternate;
         }
 
-        @keyframes bounce { from { height: 5px; } to { height: 25px; } }
+        @keyframes bounce { from { height: 4px; } to { height: 18px; } }
 
-        /* Overlay */
+        /* Overlay Royale */
         #royal-overlay {
             position: fixed; inset: 0; background: rgba(0,0,0,0.98);
             z-index: 9999; display: none; justify-content: center;
-            align-items: center; flex-direction: column;
+            align-items: center; flex-direction: column; text-align: center;
         }
 
         .footer {
-            padding: 50px; text-align: center; color: var(--gold);
-            font-size: 0.8rem; letter-spacing: 5px; opacity: 0.6;
+            padding: 40px; text-align: center; color: var(--gold);
+            font-size: 0.7rem; letter-spacing: 4px; opacity: 0.5;
         }
     </style>
 </head>
@@ -187,62 +208,74 @@
     <header>
         <div class="crown-icon">👑</div>
         <h1 class="royal-title">The Royal Diary</h1>
-        <p style="letter-spacing: 10px; color: var(--gold); font-size: 0.7rem;">SAMEER ⚜️ SUPERB</p>
+        <p style="letter-spacing: 8px; color: var(--gold); font-size: 0.6rem;">SAMEER ⚜️ SUPERB</p>
     </header>
 
     <section class="royal-card" data-tilt>
         <div id="type-text" class="shayari-text"></div>
     </section>
 
+    <!-- SOUL SCANNER (Love Calculator) RE-ADDED -->
+    <div class="scanner-container">
+        <h3>ROYAL SOUL SCANNER</h3>
+        <input type="text" id="name1" placeholder="KING'S NAME">
+        <input type="text" id="name2" placeholder="QUEEN'S NAME">
+        <button class="scan-btn" onclick="checkRoyalMatch()">VERIFY CONNECTION</button>
+        <div id="match-status" style="margin-top: 15px; font-weight: bold; font-size: 0.7rem;"></div>
+    </div>
+
     <div class="photo-grid">
         <div class="photo-frame" data-tilt>
             <div class="frame-crown">👑</div>
             <div class="neon-border"><img src="https://i.ibb.co/TB3vYwHK/20260428-201743.jpg" alt="King"></div>
-            <p style="text-align: center; margin-top: 10px; color: var(--gold);">KING</p>
+            <p style="text-align: center; margin-top: 10px; color: var(--gold); font-size: 0.7rem;">SAMEER</p>
         </div>
         <div class="photo-frame" data-tilt>
             <div class="frame-crown">👸</div>
-            <div class="neon-border" style="box-shadow: 0 0 25px var(--gold);"><img src="https://i.ibb.co/TB3vYwHK/20260428-201743.jpg" alt="Queen"></div>
-            <p style="text-align: center; margin-top: 10px; color: var(--neon-pink);">QUEEN</p>
+            <div class="neon-border" style="box-shadow: 0 0 20px var(--gold);"><img src="https://i.ibb.co/TB3vYwHK/20260428-201743.jpg" alt="Queen"></div>
+            <p style="text-align: center; margin-top: 10px; color: var(--neon-pink); font-size: 0.7rem;">SUPERB</p>
         </div>
     </div>
 
     <div class="royal-btns">
-        <button class="btn-king" onclick="kingPop('MY QUEEN FOREVER! 👸', '💍')">Love Propose</button>
-        <button class="btn-king" onclick="kingPop('ROYAL KISSES! 💋', '🔥')">Fire Kiss</button>
+        <button class="btn-king" onclick="kingPop('MY QUEEN FOREVER! 👸', '💍')">LOVE PROPOSE</button>
+        <button class="btn-king" onclick="kingPop('ROYAL KISSES! 💋', '🔥')">FIRE KISS</button>
         <button class="btn-king" id="musicBtn" onclick="playRoyalMusic()">
             ROYAL MUSIC
             <div class="music-visualizer" id="visuals">
                 <div class="v-bar"></div><div class="v-bar" style="animation-delay:0.2s"></div><div class="v-bar" style="animation-delay:0.4s"></div>
             </div>
         </button>
-        <button class="btn-king" onclick="kingPop('SAMEER ❤️ SUPERB', '👑')">King's Seal</button>
+        <button class="btn-king" onclick="kingPop('SAMEER ❤️ SUPERB', '👑')">KING'S SEAL</button>
     </div>
 
     <div class="footer">ROYALTY BY SAMEER</div>
 
+    <!-- Surprise Overlay -->
     <div id="royal-overlay" onclick="this.style.display='none'">
-        <div id="r-icon" style="font-size: 10rem;"></div>
-        <h2 id="r-text" style="font-family: 'Cinzel'; margin-top: 30px; letter-spacing: 5px; color: var(--gold);"></h2>
+        <div id="r-icon" style="font-size: 8rem; filter: drop-shadow(0 0 20px var(--gold));"></div>
+        <h2 id="r-text" style="font-family: 'Cinzel'; margin-top: 25px; letter-spacing: 4px; color: var(--gold); padding: 0 20px;"></h2>
     </div>
 
     <!-- Music Path: src/mp3 -->
     <audio id="royalAudio" src="src/mp3"></audio>
 
     <script>
-        VanillaTilt.init(document.querySelectorAll("[data-tilt]"), { max: 20, speed: 400, glare: true, "max-glare": 0.3 });
+        VanillaTilt.init(document.querySelectorAll("[data-tilt]"), { max: 15, speed: 400, glare: true, "max-glare": 0.2 });
 
+        // Fire Particles
         particlesJS('particles-js', {
             particles: {
-                number: { value: 100 },
+                number: { value: 80 },
                 color: { value: ['#ff4500', '#ffd700', '#ff0000'] },
                 shape: { type: 'circle' },
                 opacity: { value: 0.5, random: true },
                 size: { value: 2, random: true },
-                move: { speed: 3, direction: 'top', out_mode: 'out' }
+                move: { speed: 2.5, direction: 'top', out_mode: 'out' }
             }
         });
 
+        // Diamonds fall
         setInterval(() => {
             const container = document.getElementById('diamond-container');
             const d = document.createElement('div');
@@ -250,19 +283,21 @@
             d.style.left = Math.random() * 100 + 'vw';
             d.style.animationDuration = (Math.random() * 3 + 4) + 's';
             container.appendChild(d);
-            setTimeout(() => d.remove(), 7000);
-        }, 800);
+            setTimeout(() => d.remove(), 6000);
+        }, 1000);
 
+        // Typing
         const shayari = `तू मेरे महल की रानी है, ये मेरी मोहब्बत की निशानी है। बादशाह हूँ अपनी दुनिया का, पर तू मेरी पूरी ज़िंदगानी है।👑`;
         let k = 0;
         function type() {
             if(k < shayari.length) {
                 document.getElementById('type-text').innerHTML += shayari.charAt(k);
-                k++; setTimeout(type, 70);
+                k++; setTimeout(type, 75);
             }
         }
         window.onload = type;
 
+        // Music
         const audio = document.getElementById('royalAudio');
         const mBtn = document.getElementById('musicBtn');
         function playRoyalMusic() {
@@ -270,11 +305,31 @@
                 audio.play().then(() => {
                     document.getElementById('visuals').style.display = 'flex';
                     mBtn.style.background = "var(--gold)"; mBtn.style.color = "#000";
-                }).catch(() => alert("Master! Ensure file 'mp3' is inside 'src' folder."));
+                }).catch(() => alert("Master! Folder 'src' ke andar 'mp3' file nahi mili."));
             } else {
                 audio.pause();
                 document.getElementById('visuals').style.display = 'none';
-                mBtn.style.background = "linear-gradient(45deg, #111, #222)"; mBtn.style.color = "var(--gold)";
+                mBtn.style.background = "linear-gradient(45deg, #0a0a0a, #1a1a1a)"; mBtn.style.color = "var(--gold)";
+            }
+        }
+
+        // Royal Match Logic (The Love Calculator)
+        function checkRoyalMatch() {
+            const n1 = document.getElementById('name1').value.toLowerCase().trim();
+            const n2 = document.getElementById('name2').value.toLowerCase().trim();
+            const status = document.getElementById('match-status');
+
+            if (!n1 || !n2) { status.innerText = "DARBAAR MEIN NAAM LIKHIYE!"; return; }
+
+            const isMatch = ( (n1==='sameer' && n2==='superb') || (n1==='superb' && n2==='sameer') );
+
+            if (isMatch) {
+                status.style.color = "var(--gold)";
+                status.innerText = "SCANNING SOULS... CONNECTION: 100% (ROYAL DECREE)";
+                setTimeout(() => kingPop('DESTINED TO BE TOGETHER! 👑', '💖'), 1200);
+            } else {
+                status.style.color = "#ff4444";
+                status.innerText = "ACCESS DENIED! THIS DIARY IS ONLY FOR THE KING & QUEEN.";
             }
         }
 
