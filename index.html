@@ -1,0 +1,290 @@
+```html
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sameer ❤️ Superb | KING LOVE QUEEN</title>
+    <!-- External Resources -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Orbitron:wght@400;900&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <style>
+        :root {
+            --gold: #ffd700;
+            --neon-pink: #ff007f;
+            --neon-blue: #00d4ff;
+            --royal-bg: #0a0a0a;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            background: var(--royal-bg);
+            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Fire Background */
+        #particles-js {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+        }
+
+        .royal-gradient {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2;
+            background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+        }
+
+        #diamond-container {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 0;
+        }
+
+        .diamond {
+            position: absolute; font-size: 20px;
+            animation: fall linear infinite;
+            filter: drop-shadow(0 0 10px var(--neon-blue));
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* Header */
+        header {
+            height: 50vh; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; text-align: center; z-index: 2;
+        }
+
+        .crown-icon {
+            font-size: 4rem; color: var(--gold);
+            filter: drop-shadow(0 0 20px var(--gold));
+            animation: crownFloat 3s infinite alternate ease-in-out;
+        }
+
+        @keyframes crownFloat {
+            from { transform: translateY(0); }
+            to { transform: translateY(-20px); }
+        }
+
+        .royal-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2rem, 10vw, 4.5rem);
+            letter-spacing: 8px;
+            background: linear-gradient(to bottom, #fff, var(--gold), #b8860b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+        }
+
+        /* Royal Card */
+        .royal-card {
+            background: rgba(20, 20, 20, 0.8);
+            border: 2px solid var(--gold);
+            backdrop-filter: blur(20px);
+            padding: 40px; border-radius: 0 50px 0 50px;
+            max-width: 85%; margin: -40px auto 40px;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
+            position: relative; z-index: 2;
+        }
+
+        .shayari-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(1.4rem, 4.5vw, 2.2rem);
+            color: #fff; line-height: 1.5;
+            text-shadow: 0 0 10px var(--gold);
+        }
+
+        /* Photos */
+        .photo-grid {
+            display: flex; justify-content: center; gap: 40px;
+            padding: 20px; flex-wrap: wrap; position: relative; z-index: 2;
+        }
+
+        .photo-frame {
+            position: relative; width: 220px; height: 220px;
+        }
+
+        .frame-crown {
+            position: absolute; top: -45px; left: 50%;
+            transform: translateX(-50%); font-size: 3rem; z-index: 3;
+            filter: drop-shadow(0 0 10px var(--gold));
+        }
+
+        .neon-border {
+            width: 100%; height: 100%; border-radius: 20px; padding: 8px;
+            background: linear-gradient(45deg, var(--gold), var(--neon-pink), var(--gold));
+            background-size: 200% 200%;
+            animation: borderFlow 4s infinite linear;
+            box-shadow: 0 0 25px var(--neon-pink);
+        }
+
+        @keyframes borderFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .neon-border img {
+            width: 100%; height: 100%; object-fit: cover;
+            border-radius: 15px; border: 3px solid #000;
+        }
+
+        /* Buttons */
+        .royal-btns {
+            display: grid; grid-template-columns: repeat(2, 1fr);
+            gap: 20px; padding: 30px; max-width: 600px; margin: 0 auto;
+            position: relative; z-index: 2;
+        }
+
+        .btn-king {
+            background: linear-gradient(45deg, #111, #222);
+            border: 1px solid var(--gold);
+            padding: 20px; color: var(--gold);
+            border-radius: 5px; font-family: 'Orbitron', sans-serif;
+            font-weight: 900; cursor: pointer; transition: 0.4s;
+            text-transform: uppercase;
+        }
+
+        .btn-king:hover {
+            background: var(--gold); color: #000;
+            box-shadow: 0 0 40px var(--gold);
+        }
+
+        /* Music Bars */
+        .music-visualizer {
+            display: none; justify-content: center; gap: 4px; margin-top: 10px;
+        }
+
+        .v-bar {
+            width: 4px; height: 15px; background: var(--gold);
+            animation: bounce 0.6s infinite alternate;
+        }
+
+        @keyframes bounce { from { height: 5px; } to { height: 25px; } }
+
+        /* Overlay */
+        #royal-overlay {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.98);
+            z-index: 9999; display: none; justify-content: center;
+            align-items: center; flex-direction: column;
+        }
+
+        .footer {
+            padding: 50px; text-align: center; color: var(--gold);
+            font-size: 0.8rem; letter-spacing: 5px; opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="particles-js"></div>
+    <div class="royal-gradient"></div>
+    <div id="diamond-container"></div>
+
+    <header>
+        <div class="crown-icon">👑</div>
+        <h1 class="royal-title">The Royal Diary</h1>
+        <p style="letter-spacing: 10px; color: var(--gold); font-size: 0.7rem;">SAMEER ⚜️ SUPERB</p>
+    </header>
+
+    <section class="royal-card" data-tilt>
+        <div id="type-text" class="shayari-text"></div>
+    </section>
+
+    <div class="photo-grid">
+        <div class="photo-frame" data-tilt>
+            <div class="frame-crown">👑</div>
+            <div class="neon-border"><img src="https://i.ibb.co/TB3vYwHK/20260428-201743.jpg" alt="King"></div>
+            <p style="text-align: center; margin-top: 10px; color: var(--gold);">KING</p>
+        </div>
+        <div class="photo-frame" data-tilt>
+            <div class="frame-crown">👸</div>
+            <div class="neon-border" style="box-shadow: 0 0 25px var(--gold);"><img src="https://i.ibb.co/TB3vYwHK/20260428-201743.jpg" alt="Queen"></div>
+            <p style="text-align: center; margin-top: 10px; color: var(--neon-pink);">QUEEN</p>
+        </div>
+    </div>
+
+    <div class="royal-btns">
+        <button class="btn-king" onclick="kingPop('MY QUEEN FOREVER! 👸', '💍')">Love Propose</button>
+        <button class="btn-king" onclick="kingPop('ROYAL KISSES! 💋', '🔥')">Fire Kiss</button>
+        <button class="btn-king" id="musicBtn" onclick="playRoyalMusic()">
+            ROYAL MUSIC
+            <div class="music-visualizer" id="visuals">
+                <div class="v-bar"></div><div class="v-bar" style="animation-delay:0.2s"></div><div class="v-bar" style="animation-delay:0.4s"></div>
+            </div>
+        </button>
+        <button class="btn-king" onclick="kingPop('SAMEER ❤️ SUPERB', '👑')">King's Seal</button>
+    </div>
+
+    <div class="footer">ROYALTY BY SAMEER</div>
+
+    <div id="royal-overlay" onclick="this.style.display='none'">
+        <div id="r-icon" style="font-size: 10rem;"></div>
+        <h2 id="r-text" style="font-family: 'Cinzel'; margin-top: 30px; letter-spacing: 5px; color: var(--gold);"></h2>
+    </div>
+
+    <!-- Music Path: src/mp3 -->
+    <audio id="royalAudio" src="src/mp3"></audio>
+
+    <script>
+        VanillaTilt.init(document.querySelectorAll("[data-tilt]"), { max: 20, speed: 400, glare: true, "max-glare": 0.3 });
+
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 100 },
+                color: { value: ['#ff4500', '#ffd700', '#ff0000'] },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5, random: true },
+                size: { value: 2, random: true },
+                move: { speed: 3, direction: 'top', out_mode: 'out' }
+            }
+        });
+
+        setInterval(() => {
+            const container = document.getElementById('diamond-container');
+            const d = document.createElement('div');
+            d.innerHTML = '💎'; d.className = 'diamond';
+            d.style.left = Math.random() * 100 + 'vw';
+            d.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            container.appendChild(d);
+            setTimeout(() => d.remove(), 7000);
+        }, 800);
+
+        const shayari = `तू मेरे महल की रानी है, ये मेरी मोहब्बत की निशानी है। बादशाह हूँ अपनी दुनिया का, पर तू मेरी पूरी ज़िंदगानी है।👑`;
+        let k = 0;
+        function type() {
+            if(k < shayari.length) {
+                document.getElementById('type-text').innerHTML += shayari.charAt(k);
+                k++; setTimeout(type, 70);
+            }
+        }
+        window.onload = type;
+
+        const audio = document.getElementById('royalAudio');
+        const mBtn = document.getElementById('musicBtn');
+        function playRoyalMusic() {
+            if(audio.paused) {
+                audio.play().then(() => {
+                    document.getElementById('visuals').style.display = 'flex';
+                    mBtn.style.background = "var(--gold)"; mBtn.style.color = "#000";
+                }).catch(() => alert("Master! Ensure file 'mp3' is inside 'src' folder."));
+            } else {
+                audio.pause();
+                document.getElementById('visuals').style.display = 'none';
+                mBtn.style.background = "linear-gradient(45deg, #111, #222)"; mBtn.style.color = "var(--gold)";
+            }
+        }
+
+        function kingPop(t, i) {
+            document.getElementById('r-text').innerText = t;
+            document.getElementById('r-icon').innerText = i;
+            document.getElementById('royal-overlay').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>
+
+```
